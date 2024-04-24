@@ -1,0 +1,1 @@
+  The primary objective of IntraEats is to provide a user-friendly platform that enables employees to order food from designated vendors within their organization conveniently. By digitizing the dining process, we aim to enhance efficiency, satisfaction, and overall workplace experience.

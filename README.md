@@ -1,1 +1,4 @@
-  The primary objective of IntraEats is to provide a user-friendly platform that enables employees to order food from designated vendors within their organization conveniently. By digitizing the dining process, we aim to enhance efficiency, satisfaction, and overall workplace experience.
+###INTRA EATS
+
+Run this application by running `ng serve`.
+The local development server is http://localhost:4200/

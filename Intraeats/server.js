@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+require('dotenv').config();
 // const User = require('./models/user');
 
 const app = express();
@@ -19,12 +20,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //mongodb connection
-mongoose.connect("mongodb+srv://logicpulseadmin:bINelQr8up7Or1iO@cluster0.j1d4i1o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("connected to database");
   })
-  .catch(() => {
-    console.log("error connecting to database");
+  .catch((err) => {
+    console.error("error connecting to database:", err);
   });
 
 // User Model

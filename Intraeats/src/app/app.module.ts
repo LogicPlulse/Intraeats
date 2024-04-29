@@ -23,9 +23,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { VendorFormComponent } from './vendor-form/vendor-form.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
-  declarations: [AppComponent, VendorFormComponent],
+  declarations: [AppComponent, VendorFormComponent, AddUserComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

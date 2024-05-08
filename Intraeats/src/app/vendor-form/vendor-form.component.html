@@ -1,0 +1,34 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="vendor.name" name="name" required #name="ngModel">
+      <div *ngIf="name.invalid && name.touched">
+        <p *ngIf="categoryForm['name'].errors?.required">Name is required.</p>
+        <p *ngIf="categoryForm['name'].errors?.minlength">Name must be at least 3 characters long.</p>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="vendor.description" name="description" required #description="ngModel"></textarea>
+      <div *ngIf="description.invalid && description.touched">
+        <p *ngIf="categoryForm['description'].errors?.required">Description is required.</p>
+        <p *ngIf="categoryForm['description'].errors?.minlength">Description must be at least 10 characters long.</p>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" id="image" (change)="handleImageChange($event)" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="menu">Menu:</label>
+      <textarea id="menu" [(ngModel)]="vendor.menu" name="menu" required #menu="ngModel"></textarea>
+      <div *ngIf="menu.invalid && menu.touched">
+        <p *ngIf="categoryForm['menu'].errors?.required">Menu is required.</p>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="vendorForm.invalid">Add Vendor</button>
+  </form>

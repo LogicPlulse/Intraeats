@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-form',
@@ -7,6 +8,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./vendor-form.component.css']
 })
 export class VendorFormComponent {
+  constructor(private router: Router) { }
+
   vendor = {
     name: '',
     description: '',
@@ -20,7 +23,7 @@ export class VendorFormComponent {
     image: new FormControl(this.vendor.image, [Validators.required]),
     menu: new FormControl(this.vendor.menu, [Validators.required])
   });
-categoryForm: any;
+  categoryForm: any;
 
   handleImageChange(event: any) {
     this.vendor.image = event.target.files[0];
@@ -29,5 +32,9 @@ categoryForm: any;
   onSubmit() {
     console.log('Form submitted:', this.vendor);
     // TODO: Implement form submission logic
+  }
+  goBack(): void {
+    // Navigate back to the previous page
+    this.router.navigate(['/']);
   }
 }

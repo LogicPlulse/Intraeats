@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+.sidebar {
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: #555;
+}
+
+.sidebar .nav-link.active {
+  font-weight: bold;
+  background-color: #eee;
+}
+
+.card {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f0f0f0;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.btn-lg {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.col-md-10 {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add space between buttons */
+.card-body button {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .row>.col-md-6:first-child {
+    padding-right: 20px;
+  }
+
+  .row>.col-md-6:last-child {
+    padding-left: 20px;
+  }
+}

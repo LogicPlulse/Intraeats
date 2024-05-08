@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+const User = require('./models/User');
 // const User = require('./models/user');
 
 const app = express();
@@ -46,6 +47,26 @@ app.post('/api/register', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+const mongoose = require('mongoose');
+
+// Define User Schema
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+});
+
+// Create User model
+const user = mongoose.model('User', userSchema);
+
+module.exports = User;
 
 // Login endpoint
 app.post('/api/login', async (req, res) => {

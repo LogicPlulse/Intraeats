@@ -11,13 +11,16 @@
   <header class="header">
     <img class="logo" src="../assets/Intraetas_logo.jpg" alt="Intraetas Logo" />
     <h1>Your Gateway to Exceptional Eats</h1>
+    <button type="button" class="sign-out-button">Sign Out</button>
   </header>
 
   <div class="container">
     <div class="sidebar">
       <ul class="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Dashboard</a>
+          <button type="button" class="nav-link Dashboard-button" [routerLink]="['']">
+            Dashboard
+          </button>
         </li>
         <li class="nav-item">
           <button type="submit" class="nav-link vendor-form-button" [routerLink]="['/vendor-order']">
@@ -35,6 +38,10 @@
               Vendor Form
             </button>
           </form>
+        <li class="nav-item">
+          <button type="button" class="nav-link settings-button" [routerLink]="['/settings']">
+            Settings
+          </button>
         </li>
       </ul>
     </div>

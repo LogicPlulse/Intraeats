@@ -4,8 +4,7 @@
       <label>Name:</label>
       <input type="text" name="name" [(ngModel)]="user['name']" required>
       <div *ngIf="userForm.controls['name']?.invalid && (userForm.controls['name']?.dirty || userForm.controls['name']?.touched)">
-        <div *ngIf="userForm.controls['name']?.errors?.required">Name is required.</div>
-        <div *ngIf="userForm.controls['name']?.errors?.required">Name is required</div>
+        <div *ngIf="userForm.controls['name']?.errors?.['required']">Name is required.</div>
       </div>
     </div>
     
@@ -13,8 +12,8 @@
       <label>Email:</label>
       <input type="email" name="email" [(ngModel)]="user['email']" required email>
       <div *ngIf="userForm.controls['email']?.invalid && (userForm.controls['email']?.dirty || userForm.controls['email']?.touched)">
-        <div *ngIf="userForm.controls['email']?.errors?.required">Email is required.</div>
-        <div *ngIf="userForm.controls['email']?.errors?.email">Invalid email format.</div>
+        <div *ngIf="userForm.controls['email']?.errors?.['required']">Email is required.</div>
+        <div *ngIf="userForm.controls['email']?.errors?.['email']">Invalid email format.</div>
       </div>
     </div>
   
@@ -22,8 +21,8 @@
       <label>Password:</label>
       <input type="password" name="password" [(ngModel)]="user['password']" required minlength="6">
       <div *ngIf="userForm.controls['password']?.invalid && (userForm.controls['password']?.dirty || userForm.controls['password']?.touched)">
-        <div *ngIf="userForm.controls['password']?.errors?.required">Password is required.</div>
-        <div *ngIf="userForm.controls['password']?.errors?.minlength">Password must be at least 6 characters long.</div>
+        <div *ngIf="userForm.controls['password']?.errors?.['required']">Password is required.</div>
+        <div *ngIf="userForm.controls['password']?.errors?.['minlength']">Password must be at least 6 characters long.</div>
       </div>
     </div>
   
@@ -35,10 +34,9 @@
         <option value="user">User</option>
       </select>
       <div *ngIf="userForm.controls['role']?.invalid && (userForm.controls['role']?.dirty || userForm.controls['role']?.touched)">
-        <div *ngIf="userForm.controls['role']?.errors?.required">Role is required.</div>
+        <div *ngIf="userForm.controls['role']?.errors?.['required']">Role is required.</div>
       </div>
     </div>
   
     <button type="submit" [disabled]="userForm.invalid">Add User</button>
-  </form>
-  
+</form>

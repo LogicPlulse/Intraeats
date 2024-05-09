@@ -6,11 +6,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-<<<<<<< HEAD:Intraeats/src/server.js
-const User = require('./models/User');
-=======
 require('dotenv').config();
->>>>>>> 1b986d79d9c274122b1ad63fa822cd5c25786aad:Intraeats/server.js
 // const User = require('./models/user');
 
 const app = express();
@@ -52,7 +48,7 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-const mongoose = require('mongoose');
+
 
 // Define User Schema
 const userSchema = new mongoose.Schema({
@@ -68,7 +64,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Create User model
-const user = mongoose.model('User', userSchema);
+// const user = mongoose.model('User', userSchema);
 
 module.exports = User;
 
@@ -92,21 +88,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Define a route for calculating BMI
-app.post('/api/bmi', async (req, res) => {
-  try {
-    const { weight, height } = req.body;
-    const bmi = calculateBMI(weight, height);
-    res.json({ bmi });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
 
-function calculateBMI(weight, height) {
-  return (weight / (height * height)).toFixed(2);
-}
 
 // Verify token middleware
 const verifyToken = (req, res, next) => {

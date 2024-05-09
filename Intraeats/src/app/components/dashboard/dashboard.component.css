@@ -79,7 +79,7 @@ body {
   width: 100%;
 }
 
-.vendor-form-button {
+.vendor-form-button,.menu-management-button {
   background-color: #28a745;
   color: #fff;
   border: none;

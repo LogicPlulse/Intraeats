@@ -1,0 +1,42 @@
+<!-- menu-management.component.html -->
+
+<div class="container">
+    <h2>Add Food Item</h2>
+    <form [formGroup]="foodItemForm" (ngSubmit)="addFoodItem()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" class="form-control" required>
+            <div *ngIf="foodItemForm.get('name')?.invalid && foodItemForm.get('name')?.touched">
+                <small class="text-danger">Please enter a name for the food item</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" formControlName="price" class="form-control" required>
+            <div *ngIf="foodItemForm.get('price')?.invalid && foodItemForm.get('price')?.touched">
+                <small class="text-danger">Please enter a price for the food item</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea formControlName="description" class="form-control" required></textarea>
+            <div *ngIf="foodItemForm.get('description')?.invalid && foodItemForm.get('description')?.touched">
+                <small class="text-danger">Please enter a description for the food item</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" formControlName="imageUrl" class="form-control" required>
+            <div *ngIf="foodItemForm.get('imageUrl')?.invalid && foodItemForm.get('imageUrl')?.touched">
+                <small class="text-danger">Please enter an image URL for the food item</small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!foodItemForm.valid">Add Food Item</button>
+        <button (click)="goBack()" class="back-button">Back</button>
+
+    </form>
+</div>

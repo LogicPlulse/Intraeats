@@ -25,9 +25,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { VendorFormComponent } from './components/vendor-form/vendor-form.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VendorOrderComponent } from './components/vendor-order/vendor-order.component';
 
 @NgModule({
-  declarations: [AppComponent, VendorFormComponent, DashboardComponent],
+  declarations: [AppComponent, VendorFormComponent, DashboardComponent, VendorOrderComponent],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

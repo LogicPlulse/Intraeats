@@ -1,83 +1,101 @@
-/* styles.css */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-header {
+.header {
   background-color: #333;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
 
-main {
+.header .logo {
+  width: 100px;
+  height: auto;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  width: 200px;
   padding: 20px;
 }
 
-footer {
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+}
+
+.vendor-button {
+  margin-top: 20px;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-summary {
+  flex-basis: 30%;
+}
+
+.recent-orders {
+  margin-top: 20px;
+}
+
+.footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px 0;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }
 
-footer p {
-  margin: 0;
-}
-
-.sidebar {
-  height: 100vh;
-  padding-top: 20px;
-}
-
-.sidebar .nav-link {
-  color: #555;
-}
-
-.sidebar .nav-link.active {
-  font-weight: bold;
-  background-color: #eee;
-}
-
-.card {
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card-header {
-  background-color: #f0f0f0;
-  border-bottom: none;
-  font-weight: 600;
-}
-
-.btn-lg {
+.vendor-form-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.col-md-10 {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.vendor-form-button:hover {
+  background-color: #218838;
 }
 
-/* Add space between buttons */
-.card-body button {
+/* Adjustments for visual consistency */
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-item {
   margin-bottom: 10px;
-}
-
-@media (min-width: 768px) {
-  .row>.col-md-6:first-child {
-    padding-right: 20px;
-  }
-
-  .row>.col-md-6:last-child {
-    padding-left: 20px;
-  }
 }

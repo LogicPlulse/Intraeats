@@ -6,11 +6,31 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+const User = require('./models/User');
 <<<<<<< HEAD:Intraeats/src/server.js
 const User = require('./models/User');
 =======
 require('dotenv').config();
 >>>>>>> 1b986d79d9c274122b1ad63fa822cd5c25786aad:Intraeats/server.js
+
+
+
+// server.js or app.js
+const express = require('express');
+const server = express();
+const routes = require('./routes');
+
+// Use the merged routes with a base path
+app.use('/api', routes);
+
+// Start your server
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+
+
+
 // const User = require('./models/user');
 
 const app = express();

@@ -18,12 +18,14 @@ body {
 
 .container {
   display: flex;
+  /* min-height: calc(50vh - 100px); */
 }
 
 .sidebar {
   background-color: #f0f0f0;
   width: 200px;
   padding: 20px;
+  flex-shrink: 0;
 }
 
 .sidebar-nav {
@@ -39,6 +41,8 @@ body {
 .nav-link {
   display: block;
   padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
 }
 
 .vendor-button {
@@ -48,6 +52,8 @@ body {
 .content-area {
   flex: 1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary-cards {
@@ -64,17 +70,40 @@ body {
   margin-top: 20px;
 }
 
+#feedbackCarousel {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.horizontal-carousel .carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.card {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  position: relative; /* Changed from fixed */
+  bottom: 0;
 }
 
-.vendor-form-button,.menu-management-button {
+.vendor-form-button, .menu-management-button {
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -84,18 +113,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.vendor-form-button:hover {
+.vendor-form-button:hover, .menu-management-button:hover {
   background-color: #218838;
-}
-
-/* Adjustments for visual consistency */
-.nav-link {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-item {
-  margin-bottom: 10px;
 }

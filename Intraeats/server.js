@@ -7,12 +7,16 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const User = require('./models/User');
+const notifications = require('./routes/notifications');
+app.use('/api/notifications', notifications);
+const notificationPreferences = require('./routes/notificationPreferences');
+app.use('/api/notificationPreferences', notificationPreferences);
+
 <<<<<<< HEAD:Intraeats/src/server.js
 const User = require('./models/User');
 =======
 require('dotenv').config();
 >>>>>>> 1b986d79d9c274122b1ad63fa822cd5c25786aad:Intraeats/server.js
-
 
 
 // server.js or app.js

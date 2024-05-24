@@ -30,8 +30,8 @@ import { MenuManagementComponent } from './components/menu-management/menu-manag
 import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
-  declarations: [AppComponent, VendorFormComponent, DashboardComponent, VendorOrderComponent],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  declarations: [AppComponent, VendorFormComponent, DashboardComponent, VendorOrderComponent, MenuManagementComponent, SettingsComponent],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

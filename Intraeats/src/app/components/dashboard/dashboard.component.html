@@ -1,109 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
+<header class="header">
+  <img class="logo" src="../assets/Intraetas_logo.jpg" alt="Intraetas Logo" />
+  <h1>Your Gateway to Exceptional Eats</h1>
+</header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intra Eats Dashboard</title>
-</head>
+<div class="container">
+  <div class="sidebar">
+    <ul class="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link vendor-form-button" routerLink="/vendor-order">
+          Orders
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link menu-management-button" routerLink="/menu-management">
+          Menu Management
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link vendor-form-button" (click)="navigateToVendorForm()">
+          Vendor Form
+        </button>
+      </li>
+    </ul>
+  </div>
 
-<body>
-  <header class="header">
-    <img class="logo" src="../assets/Intraetas_logo.jpg" alt="Intraetas Logo" />
-    <h1>Your Gateway to Exceptional Eats</h1>
-    <button type="button" class="sign-out-button">Sign Out</button>
-  </header>
-
-  <div class="container">
-    <div class="sidebar">
-      <ul class="sidebar-nav">
-        <li class="nav-item">
-          <button type="button" class="nav-link Dashboard-button" [routerLink]="['']">
-            Dashboard
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="submit" class="nav-link vendor-form-button" [routerLink]="['/vendor-order']">
-            Orders
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="submit" class="nav-link menu-management-button" [routerLink]="['/menu-management']">
-            Menu Management
-          </button>
-        </li>
-        <li class="nav-item">
-          <form (ngSubmit)="navigateToVendorForm()">
-            <button type="submit" class="nav-link vendor-form-button">
-              Vendor Form
-            </button>
-          </form>
-        <li class="nav-item">
-          <button type="button" class="nav-link settings-button" [routerLink]="['/settings']">
-            Settings
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="content-area">
-      <h2>Vendor Dashboard</h2>
-      <div class="summary-cards">
-        <div class="card card-summary">
-          <div class="card-body">
-            <h3>Total Orders</h3>
-            <h1 class="display-4">258</h1>
-          </div>
-        </div>
-        <div class="card card-summary">
-          <div class="card-body">
-            <h3>Pending Orders</h3>
-            <h1 class="display-4">32</h1>
-          </div>
-        </div>
-        <div class="card card-summary">
-          <div class="card-body">
-            <h3>Completed Orders</h3>
-            <h1 class="display-4">226</h1>
-          </div>
+  <div class="content-area">
+    <h2>Vendor Dashboard</h2>
+    <div class="summary-cards">
+      <div class="card card-summary">
+        <div class="card-body">
+          <h3>Total Orders</h3>
+          <h1 class="display-4">258</h1>
         </div>
       </div>
+      <div class="card card-summary">
+        <div class="card-body">
+          <h3>Pending Orders</h3>
+          <h1 class="display-4">32</h1>
+        </div>
+      </div>
+      <div class="card card-summary">
+        <div class="card-body">
+          <h3>Completed Orders</h3>
+          <h1 class="display-4">226</h1>
+        </div>
+      </div>
+    </div>
 
-      <div class="recent-orders">
-        <h3>Recent Orders</h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Total</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#1234</td>
-              <td>John Smith</td>
-              <td>$45.00</td>
-              <td>Completed</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td>#1235</td>
-              <td>John Doe</td>
-              <td>$55.00</td>
-              <td>Pending</td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="recent-orders">
+      <h3>Recent Orders</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1234</td>
+            <td>John Smith</td>
+            <td>$45.00</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>#1235</td>
+            <td>John Doe</td>
+            <td>$55.00</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="feedbackCarousel" class="carousel slide horizontal-carousel" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 1</h5>
+          <p class="card-text">This is the feedback text 1.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 2</h5>
+          <p class="card-text">This is the feedback text 2.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add six more carousel items for feedbacks 3 to 8 -->
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 3</h5>
+          <p class="card-text">This is the feedback text 3.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 4</h5>
+          <p class="card-text">This is the feedback text 4.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 5</h5>
+          <p class="card-text">This is the feedback text 5.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 6</h5>
+          <p class="card-text">This is the feedback text 6.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 7</h5>
+          <p class="card-text">This is the feedback text 7.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Feedback 8</h5>
+          <p class="card-text">This is the feedback text 8.</p>
+        </div>
       </div>
     </div>
   </div>
+  <a class="carousel-control-prev" href="#feedbackCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#feedbackCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-  <footer class="footer">
-    <p>&copy; 2024 Intra Eats</p>
-  </footer>
-</body>
-
-</html>
+<footer class="footer">
+  <p>&copy; 2024 Intra Eats</p>
+</footer>

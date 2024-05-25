@@ -18,29 +18,21 @@
     <div class="sidebar">
       <ul class="sidebar-nav">
         <li class="nav-item">
-          <button type="button" class="nav-link Dashboard-button" [routerLink]="['']">
-            Dashboard
-          </button>
+          <a class="nav-link active" routerLink="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <button type="submit" class="nav-link vendor-form-button" [routerLink]="['/vendor-order']">
+          <button type="button" class="nav-link vendor-form-button" routerLink="/vendor-order">
             Orders
           </button>
         </li>
         <li class="nav-item">
-          <button type="submit" class="nav-link menu-management-button" [routerLink]="['/menu-management']">
+          <button type="button" class="nav-link menu-management-button" routerLink="/menu-management">
             Menu Management
           </button>
         </li>
         <li class="nav-item">
-          <form (ngSubmit)="navigateToVendorForm()">
-            <button type="submit" class="nav-link vendor-form-button">
-              Vendor Form
-            </button>
-          </form>
-        <li class="nav-item">
-          <button type="button" class="nav-link settings-button" [routerLink]="['/settings']">
-            Settings
+          <button type="button" class="nav-link vendor-form-button" (click)="navigateToVendorForm()">
+            Vendor Form
           </button>
         </li>
       </ul>
@@ -87,8 +79,6 @@
               <td>$45.00</td>
               <td>Completed</td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td>#1235</td>
               <td>John Doe</td>
@@ -101,9 +91,84 @@
     </div>
   </div>
 
+  <div id="feedbackCarousel" class="carousel slide horizontal-carousel" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 1</h5>
+            <p class="card-text">This is the feedback text 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 2</h5>
+            <p class="card-text">This is the feedback text 2.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add six more carousel items for feedbacks 3 to 8 -->
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 3</h5>
+            <p class="card-text">This is the feedback text 3.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 4</h5>
+            <p class="card-text">This is the feedback text 4.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 5</h5>
+            <p class="card-text">This is the feedback text 5.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 6</h5>
+            <p class="card-text">This is the feedback text 6.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 7</h5>
+            <p class="card-text">This is the feedback text 7.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Feedback 8</h5>
+            <p class="card-text">This is the feedback text 8.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <a class="carousel-control-prev" href="#feedbackCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#feedbackCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+  </div>
+
   <footer class="footer">
     <p>&copy; 2024 Intra Eats</p>
   </footer>
-</body>
-
-</html>

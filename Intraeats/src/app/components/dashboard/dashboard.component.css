@@ -68,7 +68,21 @@ body {
 }
 
 .card-summary {
-  flex-basis: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-summary h3 {
+  color: #333;
+}
+
+.card-summary .display-4 {
+  font-size: 36px;
+  color: #007bff;
+  margin-top: 10px;
 }
 
 .recent-orders {
@@ -104,11 +118,13 @@ body {
   text-align: center;
   padding: 10px 0;
   width: 100%;
-  position: relative; /* Changed from fixed */
+  position: relative;
+  /* Changed from fixed */
   bottom: 0;
 }
 
-.vendor-form-button, .menu-management-button {
+.vendor-form-button,
+.menu-management-button {
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -118,6 +134,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.vendor-form-button:hover, .menu-management-button:hover {
+.vendor-form-button:hover,
+.menu-management-button:hover {
   background-color: #218838;
 }

@@ -25,24 +25,24 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Hash password before saving
-UserSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) {
-    return next();
-  }
-  
-  try {
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(this.password, salt);
-    this.password = hashedPassword;
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+// UserSchema.pre('save', async function(next) {
+//   if (!this.isModified('password')) {
+//     return next();
+//   }
 
-// Verify password
-UserSchema.methods.verifyPassword = function(password) {
-  return bcrypt.compare(password, this.password);
-};
+//   try {
+//     const salt = await bcrypt.genSalt(10);
+//     const hashedPassword = await bcrypt.hash(this.password, salt);
+//     this.password = hashedPassword;
+//     next();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
+// // Verify password
+// UserSchema.methods.verifyPassword = function(password) {
+//   return bcrypt.compare(password, this.password);
+// };
 
 module.exports = mongoose.model('User', UserSchema);

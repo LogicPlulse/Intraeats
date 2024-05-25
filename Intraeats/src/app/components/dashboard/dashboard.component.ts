@@ -17,4 +17,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl('/vendor-form');
   }
 
+  signOut() {
+    this.router.navigate(['/login']);
+  }
 }
